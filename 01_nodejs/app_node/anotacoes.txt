@@ -1,0 +1,11 @@
+"npm: node package manager"
+
+-- criando um projeto vazio (package.json):
+npm init 
+npm init -y
+
+--adicionando módulos à aplicação
+npm install moment --save
+
+--lendo o arquivo package.json e recuperando as dependencias
+npm install
