@@ -16,3 +16,10 @@ npm install nome_modulo-g
 
 ---caso for encontrado algum erro ao criar projeto via express, deve ser executo seu comando no seguinte caminho:
 -- "C:\Program Files\nodejs\nodevars.bat"
+
+---- modulos
+---- .render() -> rederiza views
+---- .redict() -> redireciona URL.
+
+-- Criação de middlawares body-parser
+npm install body-parser --save
