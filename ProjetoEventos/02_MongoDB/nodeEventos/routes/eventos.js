@@ -7,5 +7,6 @@ module.exports = function (app) {
     app.get('/cadUsuario', eventos.cadastroUsuario);
     app.get('/cadEvento', eventos.cadastroEvento);
     app.get('/listaEventos', eventos.listaEventos);
+    app.post('/novoEvento', eventos.novoEvento);
 
 };

@@ -12,7 +12,7 @@ npm install
 
 --obtendo modulos para gerar arquivos
 -- "-g" => global
-npm install nome_modulo-g
+npm install nome_modulo -g
 
 ---caso for encontrado algum erro ao criar projeto via express, deve ser executo seu comando no seguinte caminho:
 -- "C:\Program Files\nodejs\nodevars.bat"

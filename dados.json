@@ -1,0 +1,16 @@
+{
+    "wseventos" : [
+        {
+            "id" : 1,
+            "descricao" : "Curso Java",
+            "data" : "2020-03-10",
+            "preco" : 1200
+        },
+        {
+            "id" : 2,
+            "descricao" : "Festa de formatura",
+            "data" : "2020-04-17",
+            "preco" : 1200
+        }
+    ]
+}

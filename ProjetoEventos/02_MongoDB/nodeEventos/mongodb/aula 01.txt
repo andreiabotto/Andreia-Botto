@@ -1,4 +1,4 @@
-************************
+﻿************************
 INICIA MONGO
 ***********************
 
@@ -55,4 +55,10 @@ CONSULTA INFORMAÇÕES CADASTRADAS
 > db.clientes.find()
 { "_id" : ObjectId("5e3cb71ce0e43469d36cd4cf"), "nome" : "Impacta", "telefone" :
  "3254-2200" }
->
+
+
+******************************
+CRIA SERVER
+******************************
+
+$ npm install json-server -g
