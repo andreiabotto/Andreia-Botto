@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="appAngular">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controller no AngularJs</title>
+</head>
+<body ng-controller="Principal as ctl">
+    
+    <span>Conteudo da vaiável mensagem {{ctl.mensagem}}</span>
+    <br>
+    <button ng-click="ctl.altermensagem()">
+        Alterar mensagem
+    </button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script>
+        var modulo = angular.module('appAngular', [])
+        .controller('Principal', [function(){
+            this.mensagem = 'Texto originado no controller';
+            this.altermensagem = function () {
+                this.mensagem = 'Mensagem Alterada';
+            };
+        }]);
+    </script>
+</body>
+</html>

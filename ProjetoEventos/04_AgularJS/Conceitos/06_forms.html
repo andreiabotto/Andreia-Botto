@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="appAngular">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Controller no AngularJs</title>
+</head>
+<body ng-controller="Principal as ctl">
+    
+    
+    <div class="container">
+        <h2>
+            Formulário parte - 1
+        </h2>
+        <form ng-submit="ctl.submit1()">
+            <input type="text" ng-model="ctl.nome" placeholder="Informe o nome">
+            <br>
+            <input type="text" ng-model="ctl.curso" placeholder="Informe o curso">
+            <br>
+            <input type="submit" value="Submit 1">
+        </form>
+
+        <hr>
+
+        <h2>
+            Formulário parte - 2
+        </h2>
+        <form ng-submit="ctl.submit2()">
+            <input type="text" ng-model="ctl.aluno.nome" placeholder="Informe o nome">
+            <br>
+            <input type="text" ng-model="ctl.aluno.curso" placeholder="Informe o curso">
+            <br>
+            <input type="submit" value="Submit 1">
+        </form>
+
+    </div>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script>
+        var modulo = angular.module('appAngular', [])
+        .controller('Principal', [function(){
+            
+            this.submit1 = function (){
+                let mensagem = "Primeiro Formulário: \n" + 
+                    "Nome: " + this.nome +
+                    "\nCurso:" + this.curso;
+
+                alert(mensagem);
+            };
+
+            this.submit2 = function(){
+                let mensagem = "Segundo Formulário:" + 
+                    "\nNome: " + this.aluno.nome + 
+                    "\nCurso: " + this.aluno.curso;
+
+                alert(mensagem);
+                alert(this.aluno)
+            };
+            
+        }]);
+    </script>
+</body>
+</html>

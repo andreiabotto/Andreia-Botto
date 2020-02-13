@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="appAngular">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controller no AngularJs</title>
+</head>
+<body ng-controller="Principal as ctl">
+    
+    <h2>Lista de nomes</h2>
+
+    <div ng-repeat="nome in ctl.nomes">{{nome}}</div>
+    <hr>
+    <ul>
+        <li ng-repeat="nome in ctl.nomes">{{nome}}</li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script>
+        var modulo = angular.module('appAngular', [])
+        .controller('Principal', [function(){
+            
+            this.nomes = [
+                'Machado de Assis',
+                'Cecilia Meirelles',
+                'Visconde de Taunay',
+                'Madre Teresa de Calcutá'
+            ];
+            
+        }]);
+    </script>
+</body>
+</html>

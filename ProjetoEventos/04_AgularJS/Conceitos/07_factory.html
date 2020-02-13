@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="appAngular">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controller no AngularJs</title>
+</head>
+<body ng-controller="Principal">
+    
+    <div>
+        <span>
+            Fornecer um numero:
+            <input type="number" ng-model="valor">
+            <button ng-click="calularQuadrado()">X<sup>2</sup></button>
+            <p>Resultado: {{resultado}}</p>
+        </span>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script>
+        var appAngular = angular.module('appAngular', []);
+
+        appAngular.factory('appFactory', function() {
+            var factory = {}; //objeto "fabricado" pelo factory
+            factory.multiplicar = function(a,b){
+                return a * b;
+            };
+            return factory;
+        });
+        
+        appAngular.service('appService', function (appFactory) {
+            this.calularQuadrado = function (x) {
+                return  appFactory.multiplicar(x,x);
+            }
+        });
+
+        appAngular.controller('Principal', function($scope, appService){
+            $scope.calularQuadrado = function(){
+                $scope.resultado = appService.calularQuadrado($scope.valor);            
+            }
+        });
+    </script>
+</body>
+</html>

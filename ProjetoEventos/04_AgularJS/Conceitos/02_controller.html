@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="primeiroController">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controller no AngularJs</title>
+</head>
+<body ng-controller="Principal as ctl">
+    
+    <span>Conteudo da vaiável mensagem {{ctl.mensagem}}</span>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script>
+        var modulo = angular.module('primeiroController', [])
+        .controller('Principal', [function(){
+            this.mensagem = 'Texto originado no controller';
+        }]);
+    </script>
+</body>
+</html>

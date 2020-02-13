@@ -1,0 +1,64 @@
+﻿************************
+INICIA MONGO
+***********************
+
+> mongo
+
+****************************
+EXIBE DATABASES
+****************************
+
+> show database
+2020-02-06T21:56:24.949-0300 E  QUERY    [js] uncaught exception: Error: don't k
+now how to show [database] :
+shellHelper.show@src/mongo/shell/utils.js:1139:11
+shellHelper@src/mongo/shell/utils.js:790:15
+@(shellhelp2):1:1
+
+*****************************
+CRIA DATABASE
+***************************
+
+> use dbexemplo
+switched to db dbexemplo
+> show database
+2020-02-06T21:56:39.719-0300 E  QUERY    [js] uncaught exception: Error: don't k
+now how to show [database] :
+shellHelper.show@src/mongo/shell/utils.js:1139:11
+shellHelper@src/mongo/shell/utils.js:790:15
+@(shellhelp2):1:1
+
+******************************
+CRIA TABELA E SEUS DADOS
+*****************************
+
+> db.clientes.insert({nome: "Impacta", telefone: "3254-2200"})
+WriteResult({ "nInserted" : 1 })
+
+> show dbs
+admin      0.000GB
+config     0.000GB
+dbexemplo  0.000GB
+local      0.000GB
+
+*************************************
+CONSULTA INFORMAÇÕES CADASTRADAS
+*************************************
+
+> db.clientes.find().pretty()
+{
+        "_id" : ObjectId("5e3cb71ce0e43469d36cd4cf"),
+        "nome" : "Impacta",
+        "telefone" : "3254-2200"
+}
+
+> db.clientes.find()
+{ "_id" : ObjectId("5e3cb71ce0e43469d36cd4cf"), "nome" : "Impacta", "telefone" :
+ "3254-2200" }
+
+
+******************************
+CRIA SERVER
+******************************
+
+$ npm install json-server -g
